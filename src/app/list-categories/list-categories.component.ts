@@ -20,7 +20,7 @@ export class ListCategoriesComponent {
     alert(description);
   };
   isTitle(title: string): boolean {
-    return this.titre === "" || this.titre === title;
+    return this.titre === '' || title.toLowerCase().includes(this.titre.toLowerCase());
   }
 }
 

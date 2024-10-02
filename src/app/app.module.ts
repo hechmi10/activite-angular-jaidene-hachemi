@@ -8,7 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './products/product/product.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
-import {FormsModule} from "@angular/forms"
+import {FormsModule} from "@angular/forms";
+import { TabPipe } from './tab.pipe';
+import { HighlightDirective } from './highlight.directive'
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {FormsModule} from "@angular/forms"
     FooterComponent,
     HomeComponent,
     ProductComponent,
-    ListCategoriesComponent
+    ListCategoriesComponent,
+    TabPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

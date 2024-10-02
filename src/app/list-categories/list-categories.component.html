@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <input type="text" [(ngModel)]="titre" class="form-control" placeholder="Rechercher une catégorie..." />
-      <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories">
+      <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories | tab:titre">
         <div *ngIf="isTitle(categorie.title)">
           <img (click)="afficherDescription(categorie.description)" src="{{categorie.image}}" alt="{{categorie.title | uppercase}}" class="img-fluid h-50 w-75">
           <h3>{{categorie.title | uppercase}}</h3>
@@ -9,7 +9,7 @@
           <span *ngIf="categorie.available">
             <button class="btn btn-primary">Voir produits</button>
           </span>
-          <span *ngIf="!categorie.available">Catégorie non disponible</span>
+          <span class="w-75" *ngIf="!categorie.available">Catégorie non disponible</span>
         </div>
       </div>
     </div>
