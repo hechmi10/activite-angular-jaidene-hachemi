@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './products/product/product.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import {FormsModule} from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListCategoriesComponent } from './list-categories/list-categories.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
