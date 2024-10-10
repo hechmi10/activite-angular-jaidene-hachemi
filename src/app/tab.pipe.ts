@@ -10,7 +10,7 @@ export class TabPipe implements PipeTransform {
     if(!values || !ch){
       return values
     }
-    return values.filter(value =>value.includes(ch.toLowerCase()))
+    return values.filter(value =>value.includes(ch.toLowerCase()));
   }
 
 }
