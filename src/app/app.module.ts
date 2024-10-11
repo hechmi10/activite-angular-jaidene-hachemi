@@ -10,7 +10,8 @@ import { ProductComponent } from './products/product/product.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import {FormsModule} from "@angular/forms";
 import { TabPipe } from './tab.pipe';
-import { HighlightDirective } from './highlight.directive'
+import { HighlightDirective } from './highlight.directive';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HighlightDirective } from './highlight.directive'
     ProductComponent,
     ListCategoriesComponent,
     TabPipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

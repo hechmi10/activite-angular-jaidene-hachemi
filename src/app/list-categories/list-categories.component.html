@@ -1,9 +1,11 @@
 <div class="container">
     <div class="row">
+      <h1 class="container-fluid">Bienvenue dans la page d'accueil</h1><br>
+      <h6 class="container-fluid">Rechercher par titre:</h6><br>
       <input type="text" [(ngModel)]="titre" class="form-control" placeholder="Rechercher une catégorie..." />
-      <div appHighlight class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories |tab:titre">
+      <div  class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories |tab:titre">
         <div *ngIf="isTitle(categorie.title)">
-          <img (click)="afficherDescription(categorie.description)" src="{{categorie.image}}" alt="{{categorie.title | uppercase}}" class="img-fluid h-50 w-75">
+          <img appHighlight (click)="afficherDescription(categorie.description)" src="{{categorie.image}}" alt="{{categorie.title | uppercase}}" class="img-fluid h-50 w-75">
           <h3>{{categorie.title | uppercase}}</h3>
           <p>{{categorie.description}}</p>
           <span *ngIf="categorie.available">
