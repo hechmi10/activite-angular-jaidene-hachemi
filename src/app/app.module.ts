@@ -11,7 +11,10 @@ import { ListCategoriesComponent } from './list-categories/list-categories.compo
 import {FormsModule} from "@angular/forms";
 import { TabPipe } from './tab.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
+import { DetailsCategoryComponent } from './details-category/details-category.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { NotFoundComponent } from './not-found/not-found.component'
     ListCategoriesComponent,
     TabPipe,
     HighlightDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductsCategoryComponent,
+    ProductsCategoryQPComponent,
+    DetailsCategoryComponent
   ],
   imports: [
     BrowserModule,
