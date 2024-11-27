@@ -21,7 +21,7 @@
                 <label for="brand" class="form-label">Brand du produit:</label>
                 <input type="text" name="brand" class="form-control" placeholder="Brand du produit" id="brand" formControlName="brand">
                 <label for="promotion" class="form-label">Promotion du produit:</label>
-                <input type="text" id="promotion" name="promotion" class="form-control" placeholder="Promotion du produit" pattern="^(0|[1-9][0-9]?)$">
+                <input type="text" id="promotion" name="promotion" class="form-control" placeholder="Promotion du produit" formControlName="promotion">
                 <div *ngIf="product_data.get('promotion')?.errors?.['pattern']">Promotion doit être inférieur ou égal à 100</div>
             <button type="submit" class="btn btn-primary" (click)="addProduct(model.id)"
                 [disabled]="product_data.invalid">Enregistrer le produit</button>

@@ -21,7 +21,7 @@ export class FormProductComponent {
   };
   
   addProduct(i:number) {
-    this.listProducts[i].id++;
+    this.listProducts[i-1].id++;
     this.listProducts.push(this.model);
   }
 onSubmit(_t5:NgForm){

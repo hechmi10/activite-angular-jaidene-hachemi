@@ -31,5 +31,6 @@ export class FormProduct2Component {
   addProduct(i:number) {
     this.listProducts[i].id++;
     this.listProducts.push(this.model);
+    console.log("Produit ajouté");
   }
 }
