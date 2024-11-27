@@ -6,6 +6,7 @@ import { ProductsCategoryComponent } from './products-category/products-category
 import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
 import { FormProductComponent } from './form-product/form-product.component';
+import { FormProduct2Component } from './form-product2/form-product2.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,children:[
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'contact',loadChildren:()=>import('./contact/contact.module').then(c=>c.ContactModule)},
   {path:'profile',loadChildren:()=>import('./profile/profile.module').then(pr=>pr.ProfileModule)},
   {path:'addProduct',component:FormProductComponent},
+  {path:'addProduct2',component:FormProduct2Component},
   {path:'',redirectTo:'home',pathMatch:'full'},
   
   {path:'**',component:NotFoundComponent}

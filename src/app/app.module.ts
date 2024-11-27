@@ -8,14 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './products/product/product.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TabPipe } from './tab.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
-import { FormProductComponent } from './form-product/form-product.component'
+import { FormProductComponent } from './form-product/form-product.component';
+import { FormProduct2Component } from './form-product2/form-product2.component'
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { FormProductComponent } from './form-product/form-product.component'
     ProductsCategoryComponent,
     ProductsCategoryQPComponent,
     DetailsCategoryComponent,
-    FormProductComponent
+    FormProductComponent,
+    FormProduct2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()
