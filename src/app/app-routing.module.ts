@@ -11,7 +11,12 @@ const routes: Routes = [
     {path:'details/:id',component:DetailsCategoryComponent},
     {path:'productsCategory/:id',component:ProductsCategoryComponent},
     {path:'productsCategoryQP',component:ProductsCategoryQPComponent}
+    
   ]},
+  {path:'product',loadChildren:()=>import('./products/products.module').then(p=>p.ProductsModule)},
+  {path:'apropos',loadChildren:()=>import('./apropos/apropos.module').then(a=>a.AproposModule)},
+  {path:'contact',loadChildren:()=>import('./contact/contact.module').then(c=>c.ContactModule)},
+  {path:'profile',loadChildren:()=>import('./profile/profile.module').then(pr=>pr.ProfileModule)},
   {path:'',redirectTo:'home',pathMatch:'full'},
   
   {path:'**',component:NotFoundComponent}

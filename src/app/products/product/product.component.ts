@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -7,5 +6,5 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  
+
 }
