@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { CategorieModule } from '../models/categorie/categorie.module';
+import { ShortlistModule } from '../models/shortlist/shortlist.module';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-list-categories',
@@ -7,6 +9,7 @@ import { CategorieModule } from '../models/categorie/categorie.module';
   styleUrl: './list-categories.component.css'
 })
 export class ListCategoriesComponent {
+
   categories: CategorieModule[] = [
     { "id": 1, "title": "Grand électroménager", "image": "/assets/images/categorie_electromenager.jpg", "description": "Electroménager de grands tiers", "available": true }, 
     { "id": 2, "title": "Petit électroménager", "image": "/assets/images/categorie_petit_electromenager.jpg", "description": "Electroménager de petits tiers", "available": true }, 
@@ -26,6 +29,20 @@ export class ListCategoriesComponent {
   }
   showDetails(category: any) {
     this.Category = category;  // Set the clicked category
+  }
+
+  shortList:ShortlistModule[]=[];
+  idUser: number = 1;
+
+  @ViewChildren(CardComponent) cardComponents!: QueryList<CardComponent>;
+
+  handleAddToShortList(categorieId: number) {
+    const exists = this.shortList.some(
+      item => item.idElement === categorieId && item.idUser === this.idUser
+    );
+    if (!exists) {
+      this.shortList.push({ id: Date.now(), idUser: this.idUser, idElement: categorieId, typeElement: 'category' });
+    }
   }
   
 }

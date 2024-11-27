@@ -9,10 +9,9 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class CategorieModule { 
+export class ShortlistModule { 
   id!:number;
-  title!:string;
-  image!:string;
-  description!:string;
-  available!:boolean;
+  idUser!:number;
+  idElement!:number;
+  typeElement!:string;
 }

@@ -1,0 +1,29 @@
+<div class="card">
+    <img [src]="image" alt="Image de {{ title | uppercase }}" class="card-img-top img-fluid h-50 w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{ title | uppercase }}</h5>
+      <p class="card-text">{{ description }}</p>
+  
+      <a [routerLink]="['/home/details', id]" (click)="onAddToShortlist()" class="btn btn-link">
+        Voir Détails
+      </a>
+  
+      <div>
+        <button 
+          *ngIf="available" 
+          [routerLink]="['/home/productsCategory', id]" 
+          class="btn btn-primary">
+          Voir produits
+        </button>
+        <button 
+          *ngIf="available" 
+          routerLink="/home/productsCategoryQP" 
+          [queryParams]="{id: id}" 
+          class="btn btn-secondary">
+          Voir produits 2
+        </button>
+        <span *ngIf="!available" class="text-danger">Catégorie non disponible</span>
+      </div>
+    </div>
+  </div>
+  

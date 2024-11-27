@@ -16,7 +16,9 @@ import { ProductsCategoryComponent } from './products-category/products-category
 import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
 import { FormProductComponent } from './form-product/form-product.component';
-import { FormProduct2Component } from './form-product2/form-product2.component'
+import { FormProduct2Component } from './form-product2/form-product2.component';
+import { CardComponent } from './card/card.component';
+import { ListProductsComponent } from './list-products/list-products.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FormProduct2Component } from './form-product2/form-product2.component'
     ProductsCategoryQPComponent,
     DetailsCategoryComponent,
     FormProductComponent,
-    FormProduct2Component
+    FormProduct2Component,
+    CardComponent,
+    ListProductsComponent
   ],
   imports: [
     BrowserModule,
