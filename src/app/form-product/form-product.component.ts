@@ -23,6 +23,7 @@ export class FormProductComponent {
   addProduct(i:number) {
     this.listProducts[i-1].id++;
     this.listProducts.push(this.model);
+    console.log("Produit ajouté");
   }
 onSubmit(_t5:NgForm){
     if(_t5.valid){

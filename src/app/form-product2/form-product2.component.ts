@@ -29,7 +29,7 @@ export class FormProduct2Component {
     promotion:new FormControl(this.model.promotion,[Validators.pattern("^(0|[1-9][0-9]?)$")])
   });
   addProduct(i:number) {
-    this.listProducts[i].id++;
+    this.listProducts[i-1].id++;
     this.listProducts.push(this.model);
     console.log("Produit ajouté");
   }
