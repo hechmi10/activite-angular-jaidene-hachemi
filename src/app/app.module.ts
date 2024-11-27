@@ -14,7 +14,8 @@ import { HighlightDirective } from './highlight.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
-import { DetailsCategoryComponent } from './details-category/details-category.component'
+import { DetailsCategoryComponent } from './details-category/details-category.component';
+import { FormProductComponent } from './form-product/form-product.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DetailsCategoryComponent } from './details-category/details-category.co
     NotFoundComponent,
     ProductsCategoryComponent,
     ProductsCategoryQPComponent,
-    DetailsCategoryComponent
+    DetailsCategoryComponent,
+    FormProductComponent
   ],
   imports: [
     BrowserModule,

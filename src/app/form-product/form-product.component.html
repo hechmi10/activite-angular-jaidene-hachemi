@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <form #formulaire="ngForm">
+            <div class="form-group">
+                <label class="form-label">Id du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.id" #id="ngModel"
+                    placeholder="ID du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Nom du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.name" #name="ngModel"
+                    placeholder="Nom du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Image du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.image" #image="ngModel"
+                    placeholder="Image du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Catégorie du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.categoryId" #categoryId="ngModel"
+                    placeholder="ID du catégorie du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Description du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.description" #description="ngModel"
+                    placeholder="Description du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Prix du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.price" #price="ngModel"
+                    placeholder="Prix du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Brand du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.brand" #brand="ngModel"
+                    placeholder="Brand du produit">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Promotion du produit:</label>
+                <input type="text" class="form-control" [(ngModel)]="model.promotion" #promotion="ngModel"
+                    placeholder="Promotion du produit">
+            </div>
+        </form>
+    </div>
+</div>

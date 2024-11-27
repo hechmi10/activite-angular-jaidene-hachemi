@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { ProductsCategoryQPComponent } from './products-category-qp/products-category-qp.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,children:[
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'apropos',loadChildren:()=>import('./apropos/apropos.module').then(a=>a.AproposModule)},
   {path:'contact',loadChildren:()=>import('./contact/contact.module').then(c=>c.ContactModule)},
   {path:'profile',loadChildren:()=>import('./profile/profile.module').then(pr=>pr.ProfileModule)},
+  {path:'addProduct',component:FormProductComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   
   {path:'**',component:NotFoundComponent}
