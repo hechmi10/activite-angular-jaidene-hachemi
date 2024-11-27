@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductModule } from '../models/product/product.module';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-product',
@@ -7,5 +8,26 @@ import { ProductModule } from '../models/product/product.module';
   styleUrl: './form-product.component.css'
 })
 export class FormProductComponent {
-  model!:ProductModule;
+  listProducts:ProductModule[]=[];
+  model: ProductModule = {
+    id: 0,
+    name: '',
+    image: '',
+    categoryId: 0,
+    description: '',
+    price: 0.0,
+    brand: '',
+    promotion: 0
+  };
+  
+  addProduct(i:number) {
+    this.listProducts[i].id++;
+    this.listProducts.push(this.model);
+  }
+onSubmit(_t5:NgForm){
+    if(_t5.valid){
+      alert("Formulaire plein");
+    }
+  }
+  
 }
