@@ -4,16 +4,9 @@
     <h6 class="container-fluid">Rechercher par titre:</h6><br>
     <input type="text" [(ngModel)]="titre" class="form-control" placeholder="Rechercher une catégorie..." />
     <div  class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories |tab:titre">
-      <div *ngIf="isTitle(categorie.title)">
-        <img appHighlight (click)="afficherDescription(categorie.description)" [src]="categorie.image" [alt]="categorie.title | uppercase" class="img-fluid h-50 w-75">
-        <h3>{{categorie.title | uppercase}}</h3>
-        <a [routerLink]="['/home/details',categorie.id]" (click)="showDetails(categorie)" class="nav-link">Voir Détails</a>
-        <span *ngIf="categorie.available">
-          <button [routerLink]="['/home/productsCategory',categorie.id]" class="btn btn-primary">Voir produits</button>
-          <button routerLink='/home/productsCategoryQP' [queryParams]="{id:categorie.id}" class="btn btn-primary">Voir produits 2</button>
-        </span>
-        <span *ngIf="!categorie.available">Catégorie non disponible</span>
-      </div>
+      <app-card [image]="categorie.image" [title]="categorie.title" 
+      [available]="categorie.available" [description]="categorie.description"
+       (add)="onAddToShortlist($event)"></app-card>
     </div>
   </div>
 </div>
