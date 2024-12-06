@@ -1,10 +1,20 @@
 <div class="container">
-    <div class="row">
-      <h1 class="container-fluid">Bienvenue dans la page d'accueil</h1><br>
-      <h6 class="container-fluid">Rechercher par titre:</h6><br>
-      <input type="text" [(ngModel)]="titre" class="form-control" placeholder="Rechercher une catégorie..." />
-      <app-card *ngFor="let categorie of categories | tab:titre" [id]="categorie.id" [title]="categorie.title" [image]="categorie.image" [description]="categorie.description" [available]="categorie.available" [btnText]="'Voir Produits'" (addToShortlist)="handleAddToShortList($event)"></app-card>
-      <app-list-products></app-list-products>
+  <div class="row">
+    <h1 class="container-fluid">Bienvenue dans la page d'accueil</h1><br>
+    <h6 class="container-fluid">Rechercher par titre:</h6><br>
+    <input type="text" [(ngModel)]="titre" class="form-control" placeholder="Rechercher une catégorie..." />
+    <div  class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories |tab:titre">
+      <div *ngIf="isTitle(categorie.title)">
+        <img appHighlight (click)="afficherDescription(categorie.description)" [src]="categorie.image" [alt]="categorie.title | uppercase" class="img-fluid h-50 w-75">
+        <h3>{{categorie.title | uppercase}}</h3>
+        <a [routerLink]="['/home/details',categorie.id]" (click)="showDetails(categorie)" class="nav-link">Voir Détails</a>
+        <span *ngIf="categorie.available">
+          <button [routerLink]="['/home/productsCategory',categorie.id]" class="btn btn-primary">Voir produits</button>
+          <button routerLink='/home/productsCategoryQP' [queryParams]="{id:categorie.id}" class="btn btn-primary">Voir produits 2</button>
+        </span>
+        <span *ngIf="!categorie.available">Catégorie non disponible</span>
+      </div>
     </div>
   </div>
-  <router-outlet></router-outlet>
+</div>
+<router-outlet></router-outlet>

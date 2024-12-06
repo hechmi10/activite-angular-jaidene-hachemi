@@ -1,7 +1,6 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { CategorieModule } from '../models/categorie/categorie.module';
 import { ShortlistModule } from '../models/shortlist/shortlist.module';
-import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-list-categories',
@@ -34,16 +33,7 @@ export class ListCategoriesComponent {
   shortList:ShortlistModule[]=[];
   idUser: number = 1;
 
-  @ViewChildren(CardComponent) cardComponents!: QueryList<CardComponent>;
-
-  handleAddToShortList(categorieId: number) {
-    const exists = this.shortList.some(
-      item => item.idElement === categorieId && item.idUser === this.idUser
-    );
-    if (!exists) {
-      this.shortList.push({ id: Date.now(), idUser: this.idUser, idElement: categorieId, typeElement: 'category' });
-    }
-  }
+  
   
 }
 
