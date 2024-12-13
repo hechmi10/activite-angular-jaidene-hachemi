@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngFor="let user of list">
+        {{user.lastName}} {{user.firstName}}
+    </div>
+    <button type="submit" (click)="fetchNbInList(list,'','')">
+        Compter
+    </button>
+    <button type="submit" (click)="getAllUsers()">Afficher les utilisateurs</button>
+</div>
+
+
+

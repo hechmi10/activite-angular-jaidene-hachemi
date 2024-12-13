@@ -19,6 +19,7 @@ import { FormProductComponent } from './form-product/form-product.component';
 import { FormProduct2Component } from './form-product2/form-product2.component';
 import { CardComponent } from './card/card.component';
 import { ListProductsComponent } from './list-products/list-products.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ListProductsComponent } from './list-products/list-products.component';
     FormProduct2Component,
     CardComponent,
     ListProductsComponent,
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,
