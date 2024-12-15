@@ -19,7 +19,7 @@ export class ListUserComponent {
   getAllUsers(){
     this._service.getAllUsers(this.list)
   }
-  fetchNbInList(l: User[],att:string,attVal:string){
-    this._service.fetchNbInList(l,att,attVal);
+  fetchNbInList(){
+    this._service.fetchNbInList(this.list,'accountCategory','Customer');
   }
 }

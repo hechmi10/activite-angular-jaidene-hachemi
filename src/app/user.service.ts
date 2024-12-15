@@ -9,10 +9,10 @@ export class UserService {
   getAllUsers(list:User[]){
     console.log(list);
   }
-  fetchNbInList(list:any,attribute:string,attributeVal:string){
-    let nb!:number;
-    list.forEach(() => {
-      if(attribute===attributeVal){
+  fetchNbInList(list:any[],attribute:string,attributeVal:string){
+    let nb:number=0;
+    list.forEach(user => {
+      if(user[attribute]===attributeVal){
         nb+=1
       }
     });
