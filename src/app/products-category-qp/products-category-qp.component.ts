@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductModule } from '../models/product/product.module';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products-category-qp',
@@ -17,7 +18,7 @@ export class ProductsCategoryQPComponent {
     {"id":6,"name":"TV 50","image":"/assets/images/tv-lg.jpg","categoryId":5,"description":"","price":1800,"brand":"LG","promotion":0}
   ] ;
   id:number=0;
-  constructor(private ac:ActivatedRoute){}
+  constructor(private ac:ActivatedRoute,private _service:ProductService){}
   ngOnInit(){
     this.ac.queryParamMap.subscribe(params=>{
       this.id= +params.get('id')!;
@@ -27,5 +28,8 @@ export class ProductsCategoryQPComponent {
   
   isCategory(ident: number):boolean{
     return  this.id===0 || ident === this.id;
+  }
+  getProductsByCategoryId(idC:number){
+    this._service.getProductsByIdCategory(idC).subscribe();
   }
 }

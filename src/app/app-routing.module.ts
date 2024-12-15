@@ -8,6 +8,7 @@ import { DetailsCategoryComponent } from './details-category/details-category.co
 import { FormProductComponent } from './form-product/form-product.component';
 import { FormProduct2Component } from './form-product2/form-product2.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,children:[
@@ -23,6 +24,8 @@ const routes: Routes = [
   {path:'addProduct',component:FormProductComponent},
   {path:'addProduct2',component:FormProduct2Component},
   {path:'listUser',component:ListUserComponent},
+  {path:'addCategory',component:AddCategoryComponent},
+  {path:'addCategory/:id',component:AddCategoryComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   
   {path:'**',component:NotFoundComponent}
