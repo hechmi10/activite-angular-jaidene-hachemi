@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductModule } from '../models/product/product.module';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
   templateUrl: './products-category-qp.component.html',
   styleUrl: './products-category-qp.component.css'
 })
-export class ProductsCategoryQPComponent {
+export class ProductsCategoryQPComponent implements OnInit{
   listProducts: ProductModule[] = [
     {"id":1,"name":"Réfrigérateur LG Inox","image":"/assets/images/refrigerateur-lg.jpg","categoryId":1,"description":"","price":2800,"brand":"LG","promotion":0},
     {"id":2,"name":"Réfrigérateur Samsung Blanc","image":"/assets/images/refrigerateur_samsung.jpeg","categoryId":1,"description":"","price":2400,"brand":"Samsung","promotion":0},
